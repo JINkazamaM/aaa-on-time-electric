@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#06b6d4" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Primary Meta Tags -->
+    <title>AAA On Time Electric | Florida Electrical Contractors</title>
+    <meta name="title" content="AAA On Time Electric | Florida Electrical Contractors" />
+    <meta name="description" content="Professional electrical contracting across Florida. 100% on-time service, owned equipment, 24/7 emergency response. Licensed & insured Master Electrician José L. Saladin." />
+    <meta name="keywords" content="electrician, electrical contractor, Florida, Miami, commercial electrical, industrial electrical, emergency electrician, bucket truck, excavator, 24/7 electrical service, panel upgrade, LED lighting" />
+    <meta name="author" content="AAA On Time Electric" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="google" content="notranslate" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://aaaontimeelectric.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aaaontimeelectric.com/" />
+    <meta property="og:title" content="AAA On Time Electric | Florida Electrical Contractors" />
+    <meta property="og:description" content="Professional electrical contracting across Florida. 100% on-time service, owned equipment, 24/7 emergency response." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1621905235277-295096181f21?auto=format&fit=crop&q=80&w=1200" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="AAA On Time Electric" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://aaaontimeelectric.com/" />
+    <meta name="twitter:title" content="AAA On Time Electric | Florida Electrical Contractors" />
+    <meta name="twitter:description" content="Professional electrical contracting across Florida. 100% on-time service, owned equipment, 24/7 emergency response." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1621905235277-295096181f21?auto=format&fit=crop&q=80&w=1200" />
+    <meta name="twitter:creator" content="@aaaontimeelectric" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2306b6d4' width='100' height='100' rx='20'/><text y='.9em' x='50%' text-anchor='middle' font-size='60'>⚡</text></svg>" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%2306b6d4' width='180' height='180' rx='40'/><text y='130' x='90' text-anchor='middle' font-size='100'>⚡</text></svg>" />
+
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Critical CSS - Inline to prevent theme flash -->
+    <style>
+      /* Critical above-the-fold styles */
+      :root {
+        --primary: #06b6d4;
+        --secondary: #0891b2;
+        --accent: #22d3ee;
+        --bg-base: #083344;
+        --bg-surface: #164e63;
+        --bg-card: rgba(21, 94, 117, 0.4);
+        --text-base: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border-accent: rgba(21, 94, 117, 0.5);
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 130px;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background-color: var(--bg-base);
+        color: var(--text-base);
+        min-height: 100vh;
+        min-height: 100dvh; /* Dynamic viewport height for mobile */
+        overflow-x: hidden;
+      }
+
+      #root {
+        min-height: 100vh;
+        min-height: 100dvh;
+      }
+
+      /* Loading state */
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(6, 182, 212, 0.3);
+        border-top-color: #06b6d4;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+
+      /* Prevent FOUC (Flash of Unstyled Content) */
+      .no-fouc {
+        visibility: hidden;
+      }
+
+      /* Critical button styles */
+      .btn-primary {
+        background-color: var(--primary);
+        color: var(--bg-base);
+        font-weight: 700;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--accent);
+      }
+
+      /* Emergency banner critical styles */
+      .emergency-banner {
+        background: linear-gradient(to right, #dc2626, #b91c1c, #dc2626);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        text-align: center;
+        font-weight: 700;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+      }
+
+      /* Safe area for mobile */
+      @supports (padding: max(0px)) {
+        .safe-area-pb {
+          padding-bottom: max(env(safe-area-inset-bottom), 0px);
+        }
+      }
+    </style>
+
+    <!-- Theme initialization script - runs before React loads -->
+    <script>
+      (function() {
+        try {
+          // Prevent theme flash by setting theme before React loads
+          const savedTheme = localStorage.getItem('aaa_theme-preference');
+          if (savedTheme) {
+            try {
+              const theme = JSON.parse(savedTheme).data;
+              if (theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+              }
+            } catch (e) {
+              // Invalid stored theme, use system preference
+              const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+              if (!prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'light-clean');
+              }
+            }
+          } else {
+            // Check system preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (!prefersDark) {
+              document.documentElement.setAttribute('data-theme', 'light-clean');
+            }
+          }
+        } catch (e) {
+          // localStorage not available (private browsing, etc.)
+          console.warn('Theme initialization failed:', e);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- No-JS fallback -->
+    <noscript>
+      <style>
+        body {
+          font-family: 'Inter', system-ui, -apple-system, sans-serif;
+          margin: 0;
+          padding: 0;
+          background: #083344;
+          color: #f1f5f9;
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .noscript-content {
+          max-width: 600px;
+          padding: 40px;
+          text-align: center;
+        }
+        .noscript-content h1 {
+          color: #06b6d4;
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+        }
+        .noscript-content a {
+          color: #06b6d4;
+          text-decoration: none;
+          font-weight: bold;
+        }
+        .noscript-content a:hover {
+          text-decoration: underline;
+        }
+        .phone-button {
+          display: inline-block;
+          background: #06b6d4;
+          color: #083344 !important;
+          padding: 12px 24px;
+          border-radius: 8px;
+          margin-top: 20px;
+          font-size: 1.25rem;
+        }
+        .phone-button:hover {
+          text-decoration: none !important;
+          background: #22d3ee;
+        }
+      </style>
+      <div class="noscript-content">
+        <h1>AAA On Time Electric</h1>
+        <p>JavaScript is required to view this website. Please enable JavaScript or contact us directly:</p>
+        <p><strong>Phone:</strong> <a href="tel:+17862951748">(786) 295-1748</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@aaaontimeelectric.com">info@aaaontimeelectric.com</a></p>
+        <p>24/7 Emergency Service Available</p>
+        <a href="tel:+17862951748" class="phone-button">📞 Call Now</a>
+      </div>
+    </noscript>
+
+    <!-- Offline indicator (hidden by default, shown by service worker) -->
+    <div id="offline-indicator" style="display: none; position: fixed; top: 0; left: 0; right: 0; background: #f59e0b; color: #000; text-align: center; padding: 8px; font-size: 14px; z-index: 9999; font-weight: 600;">
+      ⚠️ You are offline. Some features may be unavailable.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,286 @@
+@import "tailwindcss";
+
+@theme {
+  /* Default: Professional Polish (Dark Cyan) */
+  --color-primary: #06b6d4;
+  --color-secondary: #0891b2;
+  --color-accent: #22d3ee;
+  --color-bg-base: #083344;
+  --color-bg-surface: #164e63;
+  --color-bg-card: rgba(21, 94, 117, 0.4);
+  --color-text-base: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-border-accent: rgba(21, 94, 117, 0.5);
+}
+
+/* CSS variables for theme switching and component use */
+:root {
+  --primary: #06b6d4;
+  --secondary: #0891b2;
+  --accent: #22d3ee;
+  --bg-base: #083344;
+  --bg-surface: #164e63;
+  --bg-card: rgba(21, 94, 117, 0.4);
+  --text-base: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border-accent: rgba(21, 94, 117, 0.5);
+}
+
+[data-theme='light-sky'] {
+  --primary: #0ea5e9;
+  --secondary: #0284c7;
+  --accent: #38bdf8;
+  --bg-base: #f0f9ff;
+  --bg-surface: #ffffff;
+  --bg-card: #f8fafc;
+  --text-base: #0c4a6e;
+  --text-muted: #475569;
+  --border-accent: rgba(14, 165, 233, 0.2);
+}
+
+[data-theme='light-clean'] {
+  --primary: #2563eb;
+  --secondary: #1d4ed8;
+  --accent: #3b82f6;
+  --bg-base: #ffffff;
+  --bg-surface: #f8fafc;
+  --bg-card: #ffffff;
+  --text-base: #0f172a;
+  --text-muted: #64748b;
+  --border-accent: rgba(37, 99, 235, 0.1);
+}
+
+[data-theme='light-warm'] {
+  --primary: #d97706;
+  --secondary: #b45309;
+  --accent: #f59e0b;
+  --bg-base: #fffbeb;
+  --bg-surface: #ffffff;
+  --bg-card: #fffcf0;
+  --text-base: #451a03;
+  --text-muted: #78350f;
+  --border-accent: rgba(217, 119, 6, 0.2);
+}
+
+[data-theme='purple-voltage'] {
+  --primary: #9333ea;
+  --secondary: #7e22ce;
+  --accent: #a855f7;
+  --bg-base: #2e1065;
+  --bg-surface: #4c1d95;
+  --bg-card: rgba(126, 34, 206, 0.2);
+  --text-base: #f5f3ff;
+  --text-muted: #c4b5fd;
+  --border-accent: rgba(168, 85, 247, 0.3);
+}
+
+[data-theme='emerald-energy'] {
+  --primary: #059669;
+  --secondary: #047857;
+  --accent: #10b981;
+  --bg-base: #064e3b;
+  --bg-surface: #065f46;
+  --bg-card: rgba(5, 150, 105, 0.2);
+  --text-base: #ecfdf5;
+  --text-muted: #a7f3d0;
+  --border-accent: rgba(16, 185, 129, 0.3);
+}
+
+[data-theme='ruby-power'] {
+  --primary: #dc2626;
+  --secondary: #b91c1c;
+  --accent: #ef4444;
+  --bg-base: #450a0a;
+  --bg-surface: #7f1d1d;
+  --bg-card: rgba(220, 38, 38, 0.2);
+  --text-base: #fef2f2;
+  --text-muted: #fecaca;
+  --border-accent: rgba(239, 68, 68, 0.3);
+}
+
+[data-theme='amber-blaze'] {
+  --primary: #d97706;
+  --secondary: #b45309;
+  --accent: #fbbf24;
+  --bg-base: #451a03;
+  --bg-surface: #78350f;
+  --bg-card: rgba(217, 119, 6, 0.2);
+  --text-base: #fffbeb;
+  --text-muted: #fcd34d;
+  --border-accent: rgba(251, 191, 36, 0.3);
+}
+
+[data-theme='teal-wave'] {
+  --primary: #0d9488;
+  --secondary: #0f766e;
+  --accent: #14b8a6;
+  --bg-base: #042f2e;
+  --bg-surface: #134e4a;
+  --bg-card: rgba(13, 148, 136, 0.2);
+  --text-base: #f0fdfa;
+  --text-muted: #99f6e4;
+  --border-accent: rgba(20, 184, 166, 0.3);
+}
+
+[data-theme='pink-spark'] {
+  --primary: #db2777;
+  --secondary: #be185d;
+  --accent: #f472b6;
+  --bg-base: #500724;
+  --bg-surface: #831843;
+  --bg-card: rgba(219, 39, 119, 0.2);
+  --text-base: #fdf2f8;
+  --text-muted: #f9a8d4;
+  --border-accent: rgba(244, 114, 182, 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 130px;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-base);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-accent text-bg-base font-bold py-3 px-8 rounded transition-all duration-200 flex items-center justify-center gap-2 uppercase tracking-wide;
+  }
+  .card-surface {
+    @apply bg-bg-card border border-border-accent rounded-lg p-6 shadow-2xl transition-all duration-300;
+  }
+}
+
+/* Animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Red Emergency Banner */
+.emergency-banner {
+  @apply bg-red-600 text-white py-1 px-6 text-center font-bold text-sm tracking-wide border-b border-red-700 uppercase sticky top-0 z-50;
+}
+
+/* Safe area for mobile */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Custom scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-accent) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--border-accent);
+  border-radius: 3px;
+}
+
+/* Hide scrollbar for quick replies */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Focus visible for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Offline mode styles */
+body.offline::before {
+  content: 'Offline Mode';
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f59e0b;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  font-size: 12px;
+  z-index: 100;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Gradient animation for AI button */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  nav,
+  .emergency-banner,
+  footer,
+  .fixed,
+  button {
+    display: none !important;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+}
