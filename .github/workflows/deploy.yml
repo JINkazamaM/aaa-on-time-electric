@@ -32,6 +32,9 @@ jobs:
       run: npm run build
       env:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+    - name: Add CNAME file
+      run: echo "aaaontimeelectric.com" > ./dist/CNAME
     
     - name: Setup Pages
       uses: actions/configure-pages@v4
